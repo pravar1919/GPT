@@ -13,17 +13,22 @@ name_chain = prompt_template_name | llm
 
 prompt_template_item = PromptTemplate(
     input_variables=["restaurant_name"],
-    template = "Suggest some menu items for the {restaurant_name}. Return it as comma seperated items."
+    template = "Suggest some menu items for the {restaurant_name}. Return it as comma seperated items only, nothing else no suggestion or nothing."
 )
 item_chain = prompt_template_item | llm
 # result = chain.invoke({"cuisine": "Indian"})
 
-def create_menu(cusine):
-    # Step 4: Compose the full pipeline manually
+
+def generate_menu(cusine):
     restaurant_name = name_chain.invoke({"cuisine": cusine}).strip()
-    # print(f"Suggested name: {restaurant_name}")
         
-    # Second step: get menu items based on the name
     menu_items = item_chain.invoke({"restaurant_name": restaurant_name}).strip()
-    # print(f"Menu items: {menu_items}")
-    return restaurant_name, menu_items
+    restaurant_name, menu_items = restaurant_name, menu_items
+    return {
+        "name": restaurant_name,
+        "menu_items": menu_items
+    }
+
+
+if __name__ == '__main__':
+    print(generate_menu("Indian"))
