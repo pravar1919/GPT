@@ -8,3 +8,4 @@ Next I have used `langchain-ollama` library to setup the initial code.
     - here I am asking for the restaurant name
 3. Sequential chain
     - It is like to generate menu for the same restaurant.
+4. Agent
