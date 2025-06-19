@@ -1,0 +1,48 @@
+It's fun to work in a company where people truly BELIEVE in what they are doing!
+
+We're committed to bringing passion and customer focus to the business.
+
+Job Profile - Senior Engineer Python + AWS cloud
+Exp - 4-7 yrs
+Job Location – Bangalore
+We’re looking for a top-notch Software Engineer who always sweats the small stuff and cares about
+impeccable code. If you always strive towards a sustainable, scalable and secure code for every
+single application you develop, while keeping in mind the customer needs, then you are what we
+are looking for. You’ll get the chance to work with experienced engineers across our enterprise with
+a chance to move across varying automation technologies in the future. As Python developers in AI
+team, you will have the opportunity to work on multiple complex assignments like physics based
+complex models, lambda functions, automation pipelines, object-oriented programming, etc.
+Responsibilities
+• Analyze and translate business requirements into scalable and resilient design.
+• Own parts of the application and continuously improve them in an agile environment.
+• Create high quality maintainable products and applications using best engineering
+practices.
+• Pair with other developers and share design philosophy and goals across the team.
+• Work in cross functional teams (DevOps, Data, UX, Testing etc.).
+• Build and manage fully automated build/test/deployment environments.
+• Ensure high availability and provide quick turnaround to production issues.
+• Contribute to the design of useful, usable, and desirable products in a team environment.
+• Adapt to new programming languages, methodologies, platforms, and frameworks to
+support the business needs.
+Qualifications
+• Degree in computer science or a similar field.
+• Four or more years of experience in architecting, designing, developing, and implementing
+cloud solutions on AWS and/or Azure platforms.
+• Technologies: Python, Azure, AWS, MLFlow, Kubernetes, Terraform, AWS Sage maker,
+Lambda, Step Function.
+• Development experience with configuration management tools (Terraform, Ansible,
+CloudFormation).
+• Developing and maintaining continuous integration and continuous deployment pipelines –
+Jenkins Groovy scripts.
+• Developing containerized solutions and orchestration (Docker, Kubernetes, ECS, ECR)
+• Experience of server less architecture, cloud computing, cloud native application and
+scalability etc.
+• Understanding of core cloud concepts like Infra as code, IaaS, PaaS and SaaS.
+• Relevant certification of Azure or AWS preferred.
+• Troubleshooting and analytical skills.
+• Knowledge of AI & ML technologies, as well as ML model management context
+• Strong verbal & written communication: should be able to articulate concisely & clearly.
+
+If you like wild growth and working with happy, enthusiastic over-achievers, you'll enjoy your career with us!
+
+Not the right fit?  Let us know you're interested in a future opportunity by clicking Introduce Yourself in the top-right corner of the page or create an account to set up email alerts as new job postings become available that meet your interest!
