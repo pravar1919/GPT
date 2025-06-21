@@ -1,0 +1,9 @@
+fastapi[standard]
+langchain
+langchain-community
+langchain-core
+langchain-ollama
+pypdf
+faiss-cpu
+chardet
+pymupdf
