@@ -50,14 +50,14 @@ match_prompt = ChatPromptTemplate.from_template(
 
 # retrival_chain = create_retrieval_chain(retriver, doc_chain)
 
-chain = LLMChain(llm=llm, prompt=match_prompt)
+chain = match_prompt | llm
 
 # Combine all text from JD and Resume
 jd_text = "\n\n".join([doc.page_content for doc in jd_chunks])
 resume_text = "\n\n".join([doc.page_content for doc in resume_chunks])
 
 response = chain.invoke({"jd": jd_text, "resume": resume_text})
-print(response["text"])
+print(response)
 
 
 from langchain_community.embeddings import OllamaEmbeddings
