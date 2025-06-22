@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 import random
 import string
+from chardet.universaldetector import UniversalDetector
 
 
 async def upload_file(file, file_path):
@@ -34,3 +35,13 @@ def create_resume_dir():
     dir_name = f"uploads/resumes/{year}/{month}/{date}"
     create_new_directory(dir_name)
     return dir_name
+
+def detect_encoding(file_path):
+    detector = UniversalDetector()
+    with open(file_path, 'rb') as f:
+        for line in f:
+            detector.feed(line)
+            if detector.done:
+                break
+        detector.close()
+    return detector.result['encoding']

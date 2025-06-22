@@ -6,20 +6,10 @@ from langchain_ollama import OllamaLLM, OllamaEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import LLMChain
 import numpy as np
-from chardet.universaldetector import UniversalDetector
 import os
+from .helper import detect_encoding
 
 from langchain.chains import create_retrieval_chain
-
-def detect_encoding(file_path):
-    detector = UniversalDetector()
-    with open(file_path, 'rb') as f:
-        for line in f:
-            detector.feed(line)
-            if detector.done:
-                break
-        detector.close()
-    return detector.result['encoding']
 
 class SimilarityMatch:
     EMBEDDING = OllamaEmbeddings(model="llama3.2")
@@ -30,7 +20,6 @@ class SimilarityMatch:
 
     def load_jd(self):
         encoding = detect_encoding(self.path_to_jd)
-        print("encoding*******", encoding)
         jd_loader = TextLoader(self.path_to_jd, encoding=encoding, autodetect_encoding=True)
         self.jd_docs = jd_loader.load()
 

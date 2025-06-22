@@ -8,7 +8,6 @@ app = FastAPI(
     version=version
 )
 
-
 @app.get("/")
 def home():
     return "success"
