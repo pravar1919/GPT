@@ -3,6 +3,13 @@ from datetime import datetime
 import random
 import string
 
+
+async def upload_file(file, file_path):
+    path = os.path.join(file_path, f"{file.filename}")
+    with open(path, "wb") as f:
+        f.write(await file.read())
+    return path
+
 def get_random_string(value = 6):
     letters = string.ascii_letters
     return ''.join(random.choice(letters) for _ in range(value))

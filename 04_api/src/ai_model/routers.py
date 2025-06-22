@@ -1,10 +1,8 @@
-from fastapi import APIRouter, UploadFile, File
-import tempfile
-from typing import List
+from fastapi import APIRouter, UploadFile, File, HTTPException
+from starlette.status import HTTP_400_BAD_REQUEST
 from .services import SimilarityMatch
-from .schema import DataInput, Output
-from .helper import get_random_string, create_resume_dir, create_job_description_dir
-import os
+from .schema import Output
+from .helper import create_resume_dir, create_job_description_dir, upload_file
 
 
 ai_router = APIRouter()
@@ -14,25 +12,24 @@ async def generate_similarity(
     job_description: UploadFile = File(...),
     resume: UploadFile = File(...)
 ):
-    # Define custom directories
+    if not job_description.filename.lower().endswith(".txt"):
+        raise HTTPException(
+            status_code=HTTP_400_BAD_REQUEST,
+            detail="Job description must be a Text file (.txt)."
+        )
+
+    if not resume.filename.lower().endswith(".pdf"):
+        raise HTTPException(
+            status_code=HTTP_400_BAD_REQUEST,
+            detail="Resume must be a PDF file (.pdf)."
+        )
+
     jd_dir = create_job_description_dir()
     resume_dir = create_resume_dir()
 
-    # Save job description
-    jd_path = os.path.join(jd_dir, f"{get_random_string()}.txt")
-    with open(jd_path, "wb") as f:
-        f.write(await job_description.read())
+    jd_path = await upload_file(job_description, jd_dir)
+    resume_path = await upload_file(resume, resume_dir)
 
-    # Save resume
-    resume_path = os.path.join(resume_dir, f"{get_random_string()}.pdf")
-    with open(resume_path, "wb") as f:
-        f.write(await resume.read())
-
-    print("***********")
-    print(jd_path)
-    print("***********")
-    print(resume_path)
-    print("***********")
     ai_service = SimilarityMatch(jd_path, resume_path)
 
-    return ai_service.invoke()    
+    return ai_service.invoke()

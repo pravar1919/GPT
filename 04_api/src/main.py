@@ -2,7 +2,11 @@ from fastapi import FastAPI
 from src.ai_model.routers import ai_router
 
 version = "v1"
-app = FastAPI(version=version)
+app = FastAPI(
+    title="Job Match API",
+    description="API to compare job descriptions and resumes using AI",
+    version=version
+)
 
 
 @app.get("/")
