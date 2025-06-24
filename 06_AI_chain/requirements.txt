@@ -1,0 +1,6 @@
+langchain
+langchain-ollama
+python-dotenv
+langchain-community 
+huggingface_hub
+langchain-huggingface
