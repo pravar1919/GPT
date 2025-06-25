@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.ai_model.routers import ai_router
+from src.auth.routers import auth_router
+
 
 version = "v1"
 app = FastAPI(
@@ -22,6 +24,7 @@ def home():
     return "success"
 
 app.include_router(ai_router, prefix=f"/api/{version}", tags=["Compare"])
+app.include_router(auth_router, prefix=f"/api/{version}/auth", tags=["Auth"])
 
 if __name__ == "__main__":
     app.run(host="localhost", port="8000")
