@@ -1,16 +1,18 @@
+'use client';
 import Link from 'next/link'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import LogoutButton from '../app/auth/LogoutButton';
+import { useSession } from 'next-auth/react';
 
-export default async function Navbar() {
-  const session = await getServerSession(authOptions)
-
+export default function Navbar() {
+  const {status, data: session} = useSession()
+  console.log(status, session);
+  
   return (
     <nav className="w-full flex justify-between items-center px-6 py-4 shadow bg-dark shadow-blue-500/50">
       <Link href="/" className="text-xl font-semibold">Resume Matcher</Link>
 
       <div className="flex items-center space-x-4">
+        {status === 'loading' && <span>Loading...</span>}
         {session?.user ? (
           <>
             <span className="text-gray-700">{session.user.name}</span>
