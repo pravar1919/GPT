@@ -1,7 +1,12 @@
+import ExpenseForm from "./components/ExpenseForm";
+import ExpenseTable from "./components/ExpenseTable";
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <div className="container">
+      <ExpenseForm />
+      <ExpenseTable />
+    </div>
   );
 }
 
