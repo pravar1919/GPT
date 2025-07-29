@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const User = () => {
   const users = [
@@ -14,6 +15,7 @@ const User = () => {
           <Link to={`/users/${user.id}`}>{user.name}</Link>
         </li>
       ))}
+      <Outlet />
     </>
   );
 };
