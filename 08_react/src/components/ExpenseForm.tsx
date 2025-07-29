@@ -1,9 +1,16 @@
 
+import type { FormEvent } from 'react'
 import SelectInput from './SelectInput'
+import { useNavigate } from 'react-router-dom'
 
 const ExpenseForm = () => {
+    const navigate = useNavigate()
+    const handleSubmit = (event: FormEvent) =>{
+        event.preventDefault()
+        navigate("/")
+    }
   return (
-    <form className='mb-5'>
+    <form className='mb-5' onSubmit={(event)=>handleSubmit(event)}>
         <div className="mb-3">
             <label htmlFor="description" className="form-label">Description</label>
             <input type="text" className="form-control" id="description" />
