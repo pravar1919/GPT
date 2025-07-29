@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
     <nav>
         <ul>
-            <li>Navbar</li>
-            <li>App</li>
+            <li><Link to="/">Navbar</Link></li>
+            <li><Link to="/app">App</ Link></li>
+            <li><Link to="/users">Users</ Link></li>
         </ul>
     </nav>
   ) 
