@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = "http://localhost:8000/api/v1"
+const baseUrl = "http://localhost:1234/api/v1"
 // const baseUrl = "https://70d331400278.ngrok-free.app/api/v1"
 
 const instance = axios.create({

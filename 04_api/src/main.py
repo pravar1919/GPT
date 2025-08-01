@@ -27,6 +27,4 @@ app.include_router(ai_router, prefix=f"/api/{version}", tags=["Compare"])
 app.include_router(auth_router, prefix=f"/api/{version}/auth", tags=["Auth"])
 
 if __name__ == "__main__":
-    app.run(host="localhost", port="8000")
-
-
+    app.run(host="localhost", port="5000")
