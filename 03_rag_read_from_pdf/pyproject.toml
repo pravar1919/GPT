@@ -11,4 +11,6 @@ dependencies = [
     "langchain-community>=0.3.25",
     "langchain-ollama>=0.3.3",
     "pypdf>=5.6.0",
+    "sentence-transformers>=5.1.2",
+    "vector-db-1807>=0.3.0",
 ]

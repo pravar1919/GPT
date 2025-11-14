@@ -4,3 +4,4 @@ langchain-ollama
 ipykernel
 pypdf
 faiss-cpu
+vector-db-1807
