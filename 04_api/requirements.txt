@@ -7,3 +7,5 @@ pypdf
 faiss-cpu
 chardet
 pymupdf
+openai
+langchain-openai

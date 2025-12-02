@@ -5,3 +5,7 @@ ipykernel
 pypdf
 faiss-cpu
 vector-db-1807
+python-decouple
+openai
+langchain-openai
+langchain-chroma

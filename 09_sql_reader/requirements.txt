@@ -1,0 +1,6 @@
+langchain-ollama
+sqlalchemy
+pandas
+psycopg2-binary
+openai
+python-decouple

@@ -4,3 +4,10 @@ python-dotenv
 langchain-community 
 huggingface_hub
 langchain-huggingface
+langchain-openai
+langchain-chroma
+langchain-groq
+transformers
+sentence-transformers
+pypdf
+gradio
